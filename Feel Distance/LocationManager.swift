@@ -37,11 +37,15 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
          */
         
         let speed = Float(locations.last!.speed * 3.6)  // m/sec -> km/h
-        print("speed: " + String(speed) + " km/h")
+        //print("speed: " + String(speed) + " km/h")
         /* TODO: データが抜けたときも対処する let speeds: [speed?]
          if speed != nil {
          self.graphView.values += [speed]
          }
          */
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        
     }
 }
