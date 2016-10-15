@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		073B28161DB1CFC00035D88F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B28151DB1CFC00035D88F /* AppDelegate.swift */; };
-		073B28181DB1CFC00035D88F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B28171DB1CFC00035D88F /* ViewController.swift */; };
+		073B28181DB1CFC00035D88F /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B28171DB1CFC00035D88F /* PreviewViewController.swift */; };
 		073B281B1DB1CFC00035D88F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073B28191DB1CFC00035D88F /* Main.storyboard */; };
 		073B281D1DB1CFC00035D88F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073B281C1DB1CFC00035D88F /* Assets.xcassets */; };
 		073B28201DB1CFC00035D88F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073B281E1DB1CFC00035D88F /* LaunchScreen.storyboard */; };
+		073B28281DB1E2AF0035D88F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073B28271DB1E2AF0035D88F /* CoreLocation.framework */; };
+		073B282A1DB1E4630035D88F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B28291DB1E4630035D88F /* LocationManager.swift */; };
+		073B282D1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 073B282C1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		073B28121DB1CFC00035D88F /* Feel Distance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feel Distance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		073B28151DB1CFC00035D88F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		073B28171DB1CFC00035D88F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		073B28171DB1CFC00035D88F /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		073B281A1DB1CFC00035D88F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		073B281C1DB1CFC00035D88F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		073B281F1DB1CFC00035D88F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		073B28211DB1CFC00035D88F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073B28271DB1E2AF0035D88F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		073B28291DB1E4630035D88F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		073B282C1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "2014-10-19yamanakako.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073B28281DB1E2AF0035D88F /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +45,7 @@
 		073B28091DB1CFC00035D88F = {
 			isa = PBXGroup;
 			children = (
+				073B28271DB1E2AF0035D88F /* CoreLocation.framework */,
 				073B28141DB1CFC00035D88F /* Feel Distance */,
 				073B28131DB1CFC00035D88F /* Products */,
 			);
@@ -55,13 +63,23 @@
 			isa = PBXGroup;
 			children = (
 				073B28151DB1CFC00035D88F /* AppDelegate.swift */,
-				073B28171DB1CFC00035D88F /* ViewController.swift */,
+				073B28171DB1CFC00035D88F /* PreviewViewController.swift */,
 				073B28191DB1CFC00035D88F /* Main.storyboard */,
 				073B281C1DB1CFC00035D88F /* Assets.xcassets */,
 				073B281E1DB1CFC00035D88F /* LaunchScreen.storyboard */,
 				073B28211DB1CFC00035D88F /* Info.plist */,
+				073B28291DB1E4630035D88F /* LocationManager.swift */,
+				073B282B1DB1E78F0035D88F /* Resources */,
 			);
 			path = "Feel Distance";
+			sourceTree = "<group>";
+		};
+		073B282B1DB1E78F0035D88F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				073B282C1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +142,7 @@
 			files = (
 				073B28201DB1CFC00035D88F /* LaunchScreen.storyboard in Resources */,
 				073B281D1DB1CFC00035D88F /* Assets.xcassets in Resources */,
+				073B282D1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx in Resources */,
 				073B281B1DB1CFC00035D88F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073B28181DB1CFC00035D88F /* ViewController.swift in Sources */,
+				073B28181DB1CFC00035D88F /* PreviewViewController.swift in Sources */,
 				073B28161DB1CFC00035D88F /* AppDelegate.swift in Sources */,
+				073B282A1DB1E4630035D88F /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
