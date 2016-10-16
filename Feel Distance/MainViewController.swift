@@ -9,8 +9,18 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    //viewDidLoadの中で作るとviewDidLoadが完了したときに消えてしまう
     let locationManager = LocationManager()
-//    let previewViewController: PreviewViewController!
+
+    /*セグエ先のViewControllerのプロパティを取得する方法
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "preview" {
+            let previewViewController = segue.destinationViewController as! PreviewViewController
+            //PreviewViewControllerのプロパティをprintする
+            print("MainViewController@prepareForSegue: ", previewViewController.view.frame)
+        }
+    }
+    */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +32,5 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "preview" {
-            let previewViewController = segue.destinationViewController as! PreviewViewController
-            print("MainViewController: ", previewViewController.view.frame)
-        }
     }
 }
