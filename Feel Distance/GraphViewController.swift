@@ -9,7 +9,6 @@
 import UIKit
 
 class GraphViewController: UIViewController {
-    var values: [Float] = []
     var dataPlottedViewController: DataPlottedViewController?
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,7 +24,6 @@ class GraphViewController: UIViewController {
     }
 
     func addValue(value: Float!) -> Void {
-        values += [value]
         dataPlottedViewController!.addValue(value)
     }
 }

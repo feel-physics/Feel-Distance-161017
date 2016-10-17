@@ -11,7 +11,6 @@ import UIKit
 class MainViewController: UIViewController {
     //viewDidLoadの中で作るとviewDidLoadが完了したときに消えてしまう
     var locationManager: LocationManager!
-    var values: [Float] = []
     var graphViewController: GraphViewController!
 
     required init?(coder aDecoder: NSCoder) {
@@ -39,7 +38,6 @@ class MainViewController: UIViewController {
     }
     
     func addValue(value: Float!) -> Void {
-        values += [value]
         print("speed: " + String(value) + " km/h")
         graphViewController.addValue(value)
     }

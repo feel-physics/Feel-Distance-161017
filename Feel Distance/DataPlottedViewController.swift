@@ -9,7 +9,6 @@
 import UIKit
 
 class DataPlottedViewController: UIViewController{
-    var valuesToDraw: [Float] = []
     @IBOutlet var dataPlottedView: DataPlottedView!
     
     func addValue(value: Float!) -> Void {

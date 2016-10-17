@@ -9,28 +9,47 @@
 import UIKit
 
 class DataPlottedView: UIView{
-    var valuesToDraw: [Float]
+    var values: [Float!]
+//    let shape = CAShapeLayer()
+    let shape = DataPlottedShapeLayer()
+
+//    var dataPlottedShapeLayer: DataPlottedShapeLayer?
     
     required init?(coder aDecoder: NSCoder) {
-        valuesToDraw = []
+        values = []
+//        dataPlottedShapeLayer = DataPlottedShapeLayer(coder: aDecoder)!
         super.init(coder: aDecoder)
-        backgroundColor = UIColor(white: 0, alpha: 0.0)
+        backgroundColor = UIColor(white: 0, alpha: 1.0)
+
+        /*
+        shape.lineWidth = 2
+        shape.strokeColor = Color.graph.CGColor
+        shape.fillColor = Color.graph.CGColor
+        layer.mask = shape
+        shape.path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), nil)
+        */
     }
     
-    override func drawRect(rect: CGRect) {
-        if 2 <= valuesToDraw.count {
-            let graph = UIBezierPath()
-            graph.moveToPoint(point(Float(valuesToDraw.count - 1), valueY: valuesToDraw[0]))
-            for x in 1..<valuesToDraw.count {
+    func addValue(value: Float!) -> Void {
+        values += [value]
+        /*
+        if 3 <= values.count {
+
+            let path = UIBezierPath()
+            path.moveToPoint(point(Float(values.count - 1), valueY: values.first!))
+            for x in 1..<values.count {
                 // 左上の点から右上の点へポリラインを引いていく
-                graph.addLineToPoint(point(Float(valuesToDraw.count - 1 - x), valueY: valuesToDraw[x]))
+                path.addLineToPoint(point(Float(values.count - 1 - x), valueY: values[x]))
             }
-            graph.closePath()
-            Color.graph.setStroke()
-            graph.lineWidth = 2
-            graph.stroke()
-            graph.fill()
+            path.closePath()
+
+            shape.path = path.CGPath
+ 
         }
+        */
+        shape.position.x += 10.0
+        layer.mask = shape
+        setNeedsDisplay()
     }
     
     // 打点メソッド
@@ -38,9 +57,15 @@ class DataPlottedView: UIView{
         return CGPointMake(self.frame.width  - CGFloat(valueX * 5.0),
                            self.frame.height - CGFloat(valueY * 5.0))
     }
-    
+
+    /*
     func addValue(value: Float!) {
         valuesToDraw += [value]
-        self.setNeedsDisplay()
+        if 1 < valuesToDraw.count {
+            dataPlottedShapeLayer.addValue(value)
+            dataPlottedShapeLayer.position.x -= 5.0
+            self.setNeedsDisplay()
+        }
     }
+    */
 }

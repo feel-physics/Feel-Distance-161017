@@ -24,6 +24,7 @@
 		07B286581DB46A1C00A288D8 /* DataPlottedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */; };
 		07B2865A1DB46B1500A288D8 /* DataPlottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B286591DB46B1500A288D8 /* DataPlottedView.swift */; };
 		07B2865C1DB46E6300A288D8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2865B1DB46E6300A288D8 /* Color.swift */; };
+		07FAA5A11DB4AD36000729EA /* DataPlottedShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAA5A01DB4AD36000729EA /* DataPlottedShapeLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedViewController.swift; sourceTree = "<group>"; };
 		07B286591DB46B1500A288D8 /* DataPlottedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedView.swift; sourceTree = "<group>"; };
 		07B2865B1DB46E6300A288D8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		07FAA5A01DB4AD36000729EA /* DataPlottedShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedShapeLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				07B286531DB456D100A288D8 /* GraphView.swift */,
 				07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */,
 				07B286591DB46B1500A288D8 /* DataPlottedView.swift */,
+				07FAA5A01DB4AD36000729EA /* DataPlottedShapeLayer.swift */,
 			);
 			name = Graph;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				07B286581DB46A1C00A288D8 /* DataPlottedViewController.swift in Sources */,
 				074E8E4D1DB20AC500A36D95 /* PreviewViewController.swift in Sources */,
 				07B2865A1DB46B1500A288D8 /* DataPlottedView.swift in Sources */,
+				07FAA5A11DB4AD36000729EA /* DataPlottedShapeLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
