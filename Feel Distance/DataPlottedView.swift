@@ -38,4 +38,9 @@ class DataPlottedView: UIView{
         return CGPointMake(self.frame.width  - CGFloat(valueX * 5.0),
                            self.frame.height - CGFloat(valueY * 5.0))
     }
+    
+    func addValue(value: Float!) {
+        valuesToDraw += [value]
+        self.setNeedsDisplay()
+    }
 }

@@ -90,10 +90,7 @@
 				073B28291DB1E4630035D88F /* LocationManager.swift */,
 				074E8E4C1DB20AC500A36D95 /* PreviewViewController.swift */,
 				07B2864F1DB4480100A288D8 /* CaptureSession.swift */,
-				07B286511DB453E600A288D8 /* GraphViewController.swift */,
-				07B286531DB456D100A288D8 /* GraphView.swift */,
-				07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */,
-				07B286591DB46B1500A288D8 /* DataPlottedView.swift */,
+				07FAA59F1DB4A8E8000729EA /* Graph */,
 				079A2BEC1DB4A7500070118E /* Helper */,
 			);
 			path = "Feel Distance";
@@ -115,6 +112,17 @@
 				079A2BE91DB4A2680070118E /*  UD.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		07FAA59F1DB4A8E8000729EA /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				07B286511DB453E600A288D8 /* GraphViewController.swift */,
+				07B286531DB456D100A288D8 /* GraphView.swift */,
+				07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */,
+				07B286591DB46B1500A288D8 /* DataPlottedView.swift */,
+			);
+			name = Graph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
