@@ -11,20 +11,23 @@ import CoreLocation
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     var lm: CLLocationManager!
+    var sender: MainViewController!
     
-    override init() {
+    init(sender: MainViewController) {
         super.init()
         
-        self.lm = CLLocationManager()
-        self.lm.delegate = self
+        lm = CLLocationManager()
+        lm.delegate = self
         
         //これが最後の罠。ここに書く。
         // 「アプリ使用時のみ許可」でなかったら、ダイアログを出す。
         if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse {
-            self.lm.requestWhenInUseAuthorization()
+            lm.requestWhenInUseAuthorization()
         }
-        self.lm.desiredAccuracy = kCLLocationAccuracyBest
-        self.lm.distanceFilter = kCLDistanceFilterNone
+        lm.desiredAccuracy = kCLLocationAccuracyBest
+        lm.distanceFilter = kCLDistanceFilterNone
+        
+        self.sender = sender
     }
     
     func start() {
@@ -38,11 +41,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         
         let speed = Float(locations.last!.speed * 3.6)  // m/sec -> km/h
         //print("speed: " + String(speed) + " km/h")
-        /* TODO: データが抜けたときも対処する let speeds: [speed?]
-         if speed != nil {
-         self.graphView.values += [speed]
-         }
-         */
+        sender.addValue(speed)
     }
     
     // 電波をつかまえられなかったとき

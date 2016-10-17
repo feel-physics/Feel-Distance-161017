@@ -149,11 +149,18 @@
         <scene sceneID="yEL-Or-fXb">
             <objects>
                 <viewController id="DpZ-9Y-brS" customClass="DataPlottedViewController" customModule="Feel_Distance" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S4O-N8-G3k"/>
+                        <viewControllerLayoutGuide type="bottom" id="EmJ-b3-yAZ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yC1-fu-r3Z" customClass="DataPlottedView" customModule="Feel_Distance" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="535" height="260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="dataPlottedView" destination="yC1-fu-r3Z" id="bNg-pg-ecy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nga-gw-92B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,6 +170,10 @@
         <scene sceneID="ua3-2j-1Tg">
             <objects>
                 <viewController id="seY-lg-zFf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tH1-0Y-sGE"/>
+                        <viewControllerLayoutGuide type="bottom" id="qba-b0-Clc"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="w3S-z7-1wH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,6 +188,10 @@
         <scene sceneID="6NT-tw-l2B">
             <objects>
                 <viewController id="Jic-CZ-13v" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DZW-f5-dhJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="IQJ-Xu-Qjo"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="W74-oe-asK">
                         <rect key="frame" x="0.0" y="0.0" width="65" height="290"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,5 +9,10 @@
 import UIKit
 
 class DataPlottedViewController: UIViewController{
+    var valuesToDraw: [Float] = []
+    @IBOutlet var dataPlottedView: DataPlottedView!
     
+    func drawGraph() {
+        dataPlottedView.valuesToDraw = valuesToDraw
+    }
 }
