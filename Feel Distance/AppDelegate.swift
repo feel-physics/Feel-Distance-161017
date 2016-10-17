@@ -18,19 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // 「初回起動ですよ」
-        // NSUserDefaults のインスタンス取得
-        let ud = NSUserDefaults.standardUserDefaults()
-        // デフォルト値の設定
-        let dic = ["firstLaunch": true]
-        ud.registerDefaults(dic)
+        UD().set("isFirstLaunch", value: true)
 
         // 開発中なら…
         if InfoPList.get("ShouldResetUserDefaultOnLaunch") as! Bool {
-            // NSUserDefaultsのリセットを行う
-            let bundle = NSBundle.mainBundle().bundleIdentifier
-            NSUserDefaults.standardUserDefaults().removePersistentDomainForName(bundle!)
-        }
-        
+            UD().reset()
+        }        
         
         return true
     }

@@ -34,12 +34,14 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         self.lm.startUpdatingLocation()
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         /*
          iOSでのGPSデバッグ http://techblog.qoncept.jp/?p=12
-         */
-        
-        let speed = Float(locations.last!.speed * 3.6)  // m/sec -> km/h
+        [iOS] CLLocationManagerで移動速度を取得する - Qiita 
+        http://qiita.com/koogawa/items/05e2623f98af34b69d4c
+        */
+ 
+        let speed = Float(newLocation.speed * 3.6)  // m/sec -> km/h
         //print("speed: " + String(speed) + " km/h")
         sender.addValue(speed)
     }

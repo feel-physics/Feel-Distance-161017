@@ -34,7 +34,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdD-P8-m2D">
                                         <rect key="frame" x="0.0" y="290" width="600" height="290"/>
                                         <connections>
-                                            <segue destination="d4L-Kn-k0S" kind="embed" id="3GE-FK-Ge0"/>
+                                            <segue destination="d4L-Kn-k0S" kind="embed" identifier="graph" id="3GE-FK-Ge0"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -108,7 +108,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDu-jt-g3e">
                                 <rect key="frame" x="0.0" y="0.0" width="535" height="260"/>
                                 <connections>
-                                    <segue destination="DpZ-9Y-brS" kind="embed" id="gKH-eB-x9I"/>
+                                    <segue destination="DpZ-9Y-brS" kind="embed" identifier="dataPlotted" id="gKH-eB-x9I"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGC-IG-bGx">

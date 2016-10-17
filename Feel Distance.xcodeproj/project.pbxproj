@@ -16,6 +16,7 @@
 		073B282A1DB1E4630035D88F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073B28291DB1E4630035D88F /* LocationManager.swift */; };
 		073B282D1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 073B282C1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx */; };
 		074E8E4D1DB20AC500A36D95 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E8E4C1DB20AC500A36D95 /* PreviewViewController.swift */; };
+		079A2BEA1DB4A2680070118E /*  UD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A2BE91DB4A2680070118E /*  UD.swift */; };
 		07B286501DB4480100A288D8 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2864F1DB4480100A288D8 /* CaptureSession.swift */; };
 		07B286521DB453E600A288D8 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B286511DB453E600A288D8 /* GraphViewController.swift */; };
 		07B286541DB456D100A288D8 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B286531DB456D100A288D8 /* GraphView.swift */; };
@@ -37,6 +38,7 @@
 		073B28291DB1E4630035D88F /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		073B282C1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "2014-10-19yamanakako.gpx"; sourceTree = "<group>"; };
 		074E8E4C1DB20AC500A36D95 /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		079A2BE91DB4A2680070118E /*  UD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " UD.swift"; sourceTree = "<group>"; };
 		07B2864F1DB4480100A288D8 /* CaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
 		07B286511DB453E600A288D8 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		07B286531DB456D100A288D8 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -90,10 +92,9 @@
 				07B2864F1DB4480100A288D8 /* CaptureSession.swift */,
 				07B286511DB453E600A288D8 /* GraphViewController.swift */,
 				07B286531DB456D100A288D8 /* GraphView.swift */,
-				07B286551DB4594700A288D8 /* InfoPList.swift */,
 				07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */,
 				07B286591DB46B1500A288D8 /* DataPlottedView.swift */,
-				07B2865B1DB46E6300A288D8 /* Color.swift */,
+				079A2BEC1DB4A7500070118E /* Helper */,
 			);
 			path = "Feel Distance";
 			sourceTree = "<group>";
@@ -104,6 +105,16 @@
 				073B282C1DB1E7AB0035D88F /* 2014-10-19yamanakako.gpx */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		079A2BEC1DB4A7500070118E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				07B286551DB4594700A288D8 /* InfoPList.swift */,
+				07B2865B1DB46E6300A288D8 /* Color.swift */,
+				079A2BE91DB4A2680070118E /*  UD.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073B28181DB1CFC00035D88F /* MainViewController.swift in Sources */,
+				079A2BEA1DB4A2680070118E /*  UD.swift in Sources */,
 				07B286561DB4594700A288D8 /* InfoPList.swift in Sources */,
 				07B2865C1DB46E6300A288D8 /* Color.swift in Sources */,
 				073B28161DB1CFC00035D88F /* AppDelegate.swift in Sources */,

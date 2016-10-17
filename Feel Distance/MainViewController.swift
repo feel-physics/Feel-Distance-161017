@@ -12,21 +12,19 @@ class MainViewController: UIViewController {
     //viewDidLoadの中で作るとviewDidLoadが完了したときに消えてしまう
     var locationManager: LocationManager!
     var values: [Float] = []
+    var graphViewController: GraphViewController!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         locationManager = LocationManager(sender: self)
     }
     
-    /*セグエ先のViewControllerのプロパティを取得する方法
+    //セグエ先のViewControllerのプロパティを取得する方法
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "preview" {
-            let previewViewController = segue.destinationViewController as! PreviewViewController
-            //PreviewViewControllerのプロパティをprintする
-            print("MainViewController@prepareForSegue: ", previewViewController.view.frame)
+        if segue.identifier == "graph" {
+            graphViewController = segue.destinationViewController as! GraphViewController
         }
     }
-    */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,5 +41,6 @@ class MainViewController: UIViewController {
     func addValue(value: Float!) -> Void {
         values += [value]
         print("speed: " + String(value) + " km/h")
+        graphViewController.addValue(value)
     }
 }

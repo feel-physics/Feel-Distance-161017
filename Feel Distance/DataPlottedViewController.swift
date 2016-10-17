@@ -15,4 +15,9 @@ class DataPlottedViewController: UIViewController{
     func drawGraph() {
         dataPlottedView.valuesToDraw = valuesToDraw
     }
+    
+    func addValue(value: Float!) -> Void {
+        valuesToDraw += [value]
+        view.setNeedsDisplay()
+    }
 }

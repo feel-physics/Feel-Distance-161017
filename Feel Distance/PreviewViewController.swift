@@ -18,12 +18,12 @@ class PreviewViewController: UIViewController {
     http://ja.stackoverflow.com/questions/10098/storyboard%E3%81%A7%E9%85%8D%E7%BD%AE%E3%81%97%E3%81%9Fuicollectionview%E3%81%AE%E3%82%B5%E3%82%A4%E3%82%BA%E5%8B%95%E7%9A%84%E5%A4%89%E6%9B%B4%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6
     */
     override func viewDidLayoutSubviews() {
-        print("PreviewViewController@viewDidAppear: ", previewView.frame)
-        
-        /*
-        Swiftでクラスメソッド - Qiita http://qiita.com/econa77/items/5f9f079953e331207886
-        */
-        if InfoPList.get("ShouldCapturePreview") as! Bool{
+        // シュミレータのデバッグ時はtrue
+        func isSimulator() -> Bool {
+            return TARGET_OS_SIMULATOR != 0
+        }
+
+        if !isSimulator() {
             let captureSession = CaptureSession()
             
             //画像を表示するレイヤーを生成
