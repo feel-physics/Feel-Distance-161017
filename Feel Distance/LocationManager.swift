@@ -44,6 +44,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         let speed = Float(newLocation.speed * 3.6)  // m/sec -> km/h
         //print("speed: " + String(speed) + " km/h")
         UD().add("values", value: speed)
+        KvoModel.sharedInstance.addValue(speed)
 //        sender.addValue(speed)
     }
     

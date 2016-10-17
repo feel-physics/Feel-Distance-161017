@@ -25,6 +25,7 @@
 		07B2865A1DB46B1500A288D8 /* DataPlottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B286591DB46B1500A288D8 /* DataPlottedView.swift */; };
 		07B2865C1DB46E6300A288D8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2865B1DB46E6300A288D8 /* Color.swift */; };
 		07FAA5A11DB4AD36000729EA /* DataPlottedShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAA5A01DB4AD36000729EA /* DataPlottedShapeLayer.swift */; };
+		07FAA5A51DB589F2000729EA /* KvoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAA5A41DB589F2000729EA /* KvoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		07B286591DB46B1500A288D8 /* DataPlottedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedView.swift; sourceTree = "<group>"; };
 		07B2865B1DB46E6300A288D8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		07FAA5A01DB4AD36000729EA /* DataPlottedShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedShapeLayer.swift; sourceTree = "<group>"; };
+		07FAA5A41DB589F2000729EA /* KvoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KvoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +91,9 @@
 				073B281C1DB1CFC00035D88F /* Assets.xcassets */,
 				073B281E1DB1CFC00035D88F /* LaunchScreen.storyboard */,
 				073B28211DB1CFC00035D88F /* Info.plist */,
-				073B28291DB1E4630035D88F /* LocationManager.swift */,
 				074E8E4C1DB20AC500A36D95 /* PreviewViewController.swift */,
 				07B2864F1DB4480100A288D8 /* CaptureSession.swift */,
+				07DB48A61DB58F0E0021AB5C /* Model */,
 				07FAA59F1DB4A8E8000729EA /* Graph */,
 				079A2BEC1DB4A7500070118E /* Helper */,
 			);
@@ -114,6 +116,15 @@
 				079A2BE91DB4A2680070118E /*  UD.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		07DB48A61DB58F0E0021AB5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				073B28291DB1E4630035D88F /* LocationManager.swift */,
+				07FAA5A41DB589F2000729EA /* KvoModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		07FAA59F1DB4A8E8000729EA /* Graph */ = {
@@ -202,6 +213,7 @@
 			files = (
 				073B28181DB1CFC00035D88F /* MainViewController.swift in Sources */,
 				079A2BEA1DB4A2680070118E /*  UD.swift in Sources */,
+				07FAA5A51DB589F2000729EA /* KvoModel.swift in Sources */,
 				07B286561DB4594700A288D8 /* InfoPList.swift in Sources */,
 				07B2865C1DB46E6300A288D8 /* Color.swift in Sources */,
 				073B28161DB1CFC00035D88F /* AppDelegate.swift in Sources */,

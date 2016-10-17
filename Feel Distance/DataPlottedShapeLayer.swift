@@ -18,8 +18,8 @@ class DataPlottedShapeLayer: CAShapeLayer {
         fillColor = Color.graph.CGColor
         path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), nil)
         
-        let ud = NSUserDefaults.standardUserDefaults()
-        ud.addObserver(self, forKeyPath: "values", options: [NSKeyValueObservingOptions.New], context: nil)
+        //let ud = NSUserDefaults.standardUserDefaults()
+        //ud.addObserver(self, forKeyPath: "values", options: [NSKeyValueObservingOptions.New], context: nil)
     }
     
     override init(layer: AnyObject) {
@@ -54,9 +54,11 @@ class DataPlottedShapeLayer: CAShapeLayer {
                            self.frame.height - CGFloat(valueY * 5.0))
     }
     
+    /*
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "values" {
-            print(change)
+            //print(change)
         }
     }
+    */
 }

@@ -22,6 +22,12 @@ class GraphViewController: UIViewController {
             dataPlottedViewController = segue.destinationViewController as? DataPlottedViewController
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidLoad()
+        let model = KvoModel.sharedInstance
+        model.addObserver(self, forKeyPath: "value", options: .New, context: nil)
+    }
 
     func addValue(value: Float!) -> Void {
         dataPlottedViewController!.addValue(value)
