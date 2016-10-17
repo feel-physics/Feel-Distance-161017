@@ -43,8 +43,6 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>It&apos;s necessary to sense your movement.</string>
-	<key>ShouldCapturePreview</key>
-	<false/>
 	<key>ShouldResetUserDefaultOnLaunch</key>
 	<true/>
 	<key>ScaleLabelXMinimum</key>
