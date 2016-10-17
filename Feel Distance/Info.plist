@@ -42,6 +42,18 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To sense your location</string>
+	<string>It&apos;s necessary to sense your movement.</string>
+	<key>ShouldCapturePreview</key>
+	<false/>
+	<key>ShouldResetUserDefaultOnLaunch</key>
+	<true/>
+	<key>ScaleLabelXMinimum</key>
+	<integer>10</integer>
+	<key>ScaleLabelYMinimum</key>
+	<real>0.1</real>
+	<key>NumSmallScalesXInLargeScale</key>
+	<integer>10</integer>
+	<key>NumSmallScalesYInLargeScale</key>
+	<integer>5</integer>
 </dict>
 </plist>
