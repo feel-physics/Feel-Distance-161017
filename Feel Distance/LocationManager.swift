@@ -45,6 +45,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
          */
     }
     
+    // 電波をつかまえられなかったとき
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         
     }
