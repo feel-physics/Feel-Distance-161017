@@ -9,17 +9,8 @@
 import UIKit
 
 class GraphViewController: UIViewController {
-    let model: KvoModel
     
     required init?(coder aDecoder: NSCoder) {
-        model = KvoModel.sharedInstance
         super.init(coder: aDecoder)
-        model.addObserver(self, forKeyPath: "value", options: .New, context: nil)
-    }
-    
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if keyPath == "value" {
-            print(model.value)
-        }
     }
 }
