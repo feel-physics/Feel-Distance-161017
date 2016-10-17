@@ -91,8 +91,7 @@
 				073B281C1DB1CFC00035D88F /* Assets.xcassets */,
 				073B281E1DB1CFC00035D88F /* LaunchScreen.storyboard */,
 				073B28211DB1CFC00035D88F /* Info.plist */,
-				074E8E4C1DB20AC500A36D95 /* PreviewViewController.swift */,
-				07B2864F1DB4480100A288D8 /* CaptureSession.swift */,
+				07DB48A71DB591710021AB5C /* Preview */,
 				07DB48A61DB58F0E0021AB5C /* Model */,
 				07FAA59F1DB4A8E8000729EA /* Graph */,
 				079A2BEC1DB4A7500070118E /* Helper */,
@@ -125,6 +124,15 @@
 				07FAA5A41DB589F2000729EA /* KvoModel.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		07DB48A71DB591710021AB5C /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				074E8E4C1DB20AC500A36D95 /* PreviewViewController.swift */,
+				07B2864F1DB4480100A288D8 /* CaptureSession.swift */,
+			);
+			name = Preview;
 			sourceTree = "<group>";
 		};
 		07FAA59F1DB4A8E8000729EA /* Graph */ = {

@@ -17,10 +17,11 @@ class KvoModel: NSObject {
         return Singleton.instance
     }
     
-    dynamic var speed = Float(0.0)
+    dynamic var value    = Float(0.0)
+    dynamic var valueSum = Float(0.0)
     
     func addValue( value: Float) {
-        speed = value
-        print(speed)
+        self.value = value
+        valueSum += value
     }
 }

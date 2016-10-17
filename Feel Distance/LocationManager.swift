@@ -13,7 +13,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     var lm: CLLocationManager!
     var sender: MainViewController!
     
-    init(sender: MainViewController) {
+    override init() {
         super.init()
         
         lm = CLLocationManager()
@@ -26,8 +26,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
         lm.desiredAccuracy = kCLLocationAccuracyBest
         lm.distanceFilter = kCLDistanceFilterNone
-        
-        self.sender = sender
     }
     
     func start() {
@@ -43,9 +41,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
  
         let speed = Float(newLocation.speed * 3.6)  // m/sec -> km/h
         //print("speed: " + String(speed) + " km/h")
-        UD().add("values", value: speed)
         KvoModel.sharedInstance.addValue(speed)
-//        sender.addValue(speed)
     }
     
     // 電波をつかまえられなかったとき

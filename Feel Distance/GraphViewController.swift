@@ -9,27 +9,17 @@
 import UIKit
 
 class GraphViewController: UIViewController {
-    var dataPlottedViewController: DataPlottedViewController?
+    let model: KvoModel
     
     required init?(coder aDecoder: NSCoder) {
+        model = KvoModel.sharedInstance
         super.init(coder: aDecoder)
-        dataPlottedViewController = nil
-    }
-    
-    //セグエ先のViewControllerのプロパティを取得する方法
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "dataPlotted" {
-            dataPlottedViewController = segue.destinationViewController as? DataPlottedViewController
-        }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewDidLoad()
-        let model = KvoModel.sharedInstance
         model.addObserver(self, forKeyPath: "value", options: .New, context: nil)
     }
-
-    func addValue(value: Float!) -> Void {
-        dataPlottedViewController!.addValue(value)
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "value" {
+            print(model.value)
+        }
     }
 }

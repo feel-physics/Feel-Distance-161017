@@ -15,16 +15,9 @@ class MainViewController: UIViewController {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        locationManager = LocationManager(sender: self)
+        locationManager = LocationManager()
     }
     
-    //セグエ先のViewControllerのプロパティを取得する方法
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "graph" {
-            graphViewController = segue.destinationViewController as! GraphViewController
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,10 +28,5 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func addValue(value: Float!) -> Void {
-        //print("speed: " + String(value) + " km/h")
-        graphViewController.addValue(value)
     }
 }
