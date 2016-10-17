@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class DataPlottedShapeLayer: CAShapeLayer {
     
@@ -16,6 +17,9 @@ class DataPlottedShapeLayer: CAShapeLayer {
         strokeColor = Color.graph.CGColor
         fillColor = Color.graph.CGColor
         path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), nil)
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.addObserver(self, forKeyPath: "values", options: [NSKeyValueObservingOptions.New], context: nil)
     }
     
     override init(layer: AnyObject) {
@@ -48,5 +52,11 @@ class DataPlottedShapeLayer: CAShapeLayer {
     func point(valueX:Float, valueY:Float) -> CGPoint {
         return CGPointMake(self.frame.width  - CGFloat(valueX * 5.0),
                            self.frame.height - CGFloat(valueY * 5.0))
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "values" {
+            print(change)
+        }
     }
 }

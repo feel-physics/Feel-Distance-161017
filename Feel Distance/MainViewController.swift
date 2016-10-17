@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     }
     
     func addValue(value: Float!) -> Void {
-        print("speed: " + String(value) + " km/h")
+        //print("speed: " + String(value) + " km/h")
         graphViewController.addValue(value)
     }
 }

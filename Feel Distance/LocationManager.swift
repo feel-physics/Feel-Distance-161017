@@ -43,7 +43,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
  
         let speed = Float(newLocation.speed * 3.6)  // m/sec -> km/h
         //print("speed: " + String(speed) + " km/h")
-        sender.addValue(speed)
+        UD().add("values", value: speed)
+//        sender.addValue(speed)
     }
     
     // 電波をつかまえられなかったとき
