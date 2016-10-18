@@ -10,8 +10,7 @@ import UIKit
 
 class DataPlottedViewController: UIViewController{
     let model: KvoModel
-    //var shape: DataPlottedShapeLayer?
-    var ovalShapeLayers: [CAShapeLayer] = []
+    var shapeLayers: [CAShapeLayer] = []
     
     
     /*
@@ -34,13 +33,13 @@ class DataPlottedViewController: UIViewController{
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "value" {
-            ovalShapeLayers += [CAShapeLayer()]
-            let ovalShapeLayer = ovalShapeLayers.last!
+            shapeLayers += [CAShapeLayer()]
+            let shapeLayer = shapeLayers.last!
             // 円のCALayer作成
-            ovalShapeLayer.strokeColor = UIColor.blueColor().CGColor  // 輪郭は青色
-            ovalShapeLayer.fillColor = UIColor.whiteColor().CGColor  // 図形の中の色は白色
-            ovalShapeLayer.lineWidth = 3.0  // 輪郭の線の太さは1.0pt
-            ovalShapeLayer.lineDashPattern = [2, 3]
+            shapeLayer.strokeColor = UIColor.blueColor().CGColor  // 輪郭は青色
+            shapeLayer.fillColor = UIColor.whiteColor().CGColor  // 図形の中の色は白色
+            shapeLayer.lineWidth = 3.0  // 輪郭の線の太さは1.0pt
+            shapeLayer.lineDashPattern = [2, 3]
             
             
             let graphPath = UIBezierPath()
@@ -52,13 +51,13 @@ class DataPlottedViewController: UIViewController{
             graphPath.addLineToPoint(point(10.0, y: CGFloat(model.value)))
             graphPath.addLineToPoint(point(0.0, y: CGFloat(model.value)))
             graphPath.closePath()
-            ovalShapeLayer.path = graphPath.CGPath
+            shapeLayer.path = graphPath.CGPath
             
             // 作成したCALayerを画面に追加
-            view.layer.addSublayer(ovalShapeLayer)
+            view.layer.addSublayer(shapeLayer)
             
-            for ovalShapeLayer in ovalShapeLayers {
-                ovalShapeLayer.position.x -= 10.0
+            for shapeLayer in shapeLayers {
+                shapeLayer.position.x -= 10.0
             }
 //            shape = getColumn(model.value)
 //            print(model.value)
