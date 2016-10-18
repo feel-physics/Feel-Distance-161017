@@ -12,7 +12,7 @@ class DataPlottedView: UIView{
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        backgroundColor = UIColor(white: 0, alpha: 1.0)
+        backgroundColor = UIColor(white: 0, alpha: 0.5)
     }
 
     // 打点メソッド

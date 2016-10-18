@@ -11,12 +11,26 @@ import Foundation
 
 class DataPlottedShapeLayer: CAShapeLayer {
     
-    override init() {
+    init(points: [CGPoint]) {
         super.init()
         lineWidth = 2
         strokeColor = Color.graph.CGColor
         fillColor = Color.graph.CGColor
-        path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), nil)
+        
+//        path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), nil)
+//        backgroundColor = Color.graph.CGColor
+        
+        
+
+        let graphPath = UIBezierPath()
+        graphPath.moveToPoint(points[0])
+        graphPath.addLineToPoint(points[1])
+        graphPath.addLineToPoint(points[2])
+        graphPath.addLineToPoint(points[3])
+        graphPath.closePath()
+        path = graphPath.CGPath
+        backgroundColor = Color.graph.CGColor
+        Color.graph.setFill()
         
     }
     
@@ -49,6 +63,6 @@ class DataPlottedShapeLayer: CAShapeLayer {
     // 打点メソッド
     func point(valueX:Float, valueY:Float) -> CGPoint {
         return CGPointMake(self.frame.width  - CGFloat(valueX * 5.0),
-                           self.frame.height - CGFloat(valueY * 5.0))
+                           self.frame.height - CGFloat(valueY * 1.0))
     }
 }
