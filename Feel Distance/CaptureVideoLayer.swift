@@ -12,9 +12,9 @@ import AVFoundation
 class CaptureVideoLayer: AVCaptureVideoPreviewLayer {
     
     override init(session: AVCaptureSession) {
+        super.init()
         connection.videoOrientation = AVCaptureVideoOrientation.LandscapeRight
         videoGravity                = AVLayerVideoGravityResizeAspectFill
-        super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {
