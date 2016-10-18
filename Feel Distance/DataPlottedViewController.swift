@@ -10,7 +10,9 @@ import UIKit
 
 class DataPlottedViewController: UIViewController{
     let model: KvoModel
-    var shape: DataPlottedShapeLayer?
+    //var shape: DataPlottedShapeLayer?
+    var ovalShapeLayers: [CAShapeLayer] = []
+    
     
     /*
     NSUnknownKeyExceptionが出た時の回避方法 | iPhoneアプリ開発者の憂鬱 
@@ -19,7 +21,7 @@ class DataPlottedViewController: UIViewController{
     
     required init?(coder aDecoder: NSCoder) {
         model = KvoModel.sharedInstance
-        shape = nil
+        //shape = nil
         super.init(coder: aDecoder)
     }
     
@@ -28,42 +30,61 @@ class DataPlottedViewController: UIViewController{
     }
     
     override func viewDidLayoutSubviews() {
-//        view.layer.anchorPoint = CGPointMake(0.0, 1.0)
-//        var points: [CGPoint] = []
-//        points += [point(10.0, valueY: 20.0)]
-//        points += [point(0.0 , valueY: 30.0)]
-//        points += [point(0.0 , valueY:  0.0)]
-//        points += [point(10.0, valueY:  0.0)]
-//        shape = DataPlottedShapeLayer(points: points)
-//        shape?.setAnchorPoint(CGPointMake(1.0, 1.0), forView: view)
-//        view.layer.setAnchorPoint(CGPointMake(1.0, 1.0), forView: view)
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == "value" {
-            addColumn(model.value)
-            print(model.value)
+            ovalShapeLayers += [CAShapeLayer()]
+            let ovalShapeLayer = ovalShapeLayers.last!
+            // 円のCALayer作成
+            ovalShapeLayer.strokeColor = UIColor.blueColor().CGColor  // 輪郭は青色
+            ovalShapeLayer.fillColor = UIColor.whiteColor().CGColor  // 図形の中の色は白色
+            ovalShapeLayer.lineWidth = 3.0  // 輪郭の線の太さは1.0pt
+            ovalShapeLayer.lineDashPattern = [2, 3]
+            
+            
+            let graphPath = UIBezierPath()
+            func point(x: CGFloat, y: CGFloat) -> CGPoint {
+                return CGPointMake(view.bounds.size.width - x, view.bounds.size.height - y)
+            }
+            graphPath.moveToPoint(point(0.0, y: 0.0))
+            graphPath.addLineToPoint(point(10.0, y: 0.0))
+            graphPath.addLineToPoint(point(10.0, y: CGFloat(model.value)))
+            graphPath.addLineToPoint(point(0.0, y: CGFloat(model.value)))
+            graphPath.closePath()
+            ovalShapeLayer.path = graphPath.CGPath
+            
+            // 作成したCALayerを画面に追加
+            view.layer.addSublayer(ovalShapeLayer)
+            
+            for ovalShapeLayer in ovalShapeLayers {
+                ovalShapeLayer.position.x -= 10.0
+            }
+//            shape = getColumn(model.value)
+//            print(model.value)
             //shape!.position.x += 10.0
             //shape?.position.y = CGFloat(model.valueSum)
             //print(shape!.position.x)
-            view.layer.mask = shape
-            view.setNeedsDisplay()
+//            view.layer.mask = shape
+//            view.layer.addSublayer(shape!)
+//            view.setNeedsDisplay()
+//            view.layer.setNeedsDisplay()
         }
     }
     
     // 打点メソッド
     func point(valueX:Float, valueY:Float) -> CGPoint {
-        print(view.frame.width, view.frame.height)
+        //print(view.frame.width, view.frame.height)
         return CGPointMake(view.frame.width  - CGFloat(valueX * 5.0),
                            view.frame.height - CGFloat(valueY * 5.0))
     }
     
-    func addColumn(height: Float) {
+    func getColumn(height: Float) -> DataPlottedShapeLayer {
         var points: [CGPoint] = []
         points += [point(10.0, valueY: height)]
         points += [point(0.0 , valueY: height)]
         points += [point(0.0 , valueY:  0.0)]
         points += [point(10.0, valueY:  0.0)]
-        shape = DataPlottedShapeLayer(points: points)
+        return DataPlottedShapeLayer(points: points)
     }
 }

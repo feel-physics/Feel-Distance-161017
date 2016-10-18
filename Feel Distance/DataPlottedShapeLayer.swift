@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 
 class DataPlottedShapeLayer: CAShapeLayer {
+//    var width: CGFloat
     
     init(points: [CGPoint]) {
         super.init()
@@ -32,6 +33,9 @@ class DataPlottedShapeLayer: CAShapeLayer {
         backgroundColor = Color.graph.CGColor
         Color.graph.setFill()
         
+        delegate = self
+        frame = CGRectMake(points[0].x, points[0].y, 50.0, 100.0)
+        print(frame.width, frame.height)
     }
     
     override init(layer: AnyObject) {
@@ -41,6 +45,7 @@ class DataPlottedShapeLayer: CAShapeLayer {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     
     /*
     func addValue(value: Float!) -> Void {
@@ -64,5 +69,10 @@ class DataPlottedShapeLayer: CAShapeLayer {
     func point(valueX:Float, valueY:Float) -> CGPoint {
         return CGPointMake(self.frame.width  - CGFloat(valueX * 5.0),
                            self.frame.height - CGFloat(valueY * 1.0))
+    }
+    
+    override func drawLayer(layer: CALayer, inContext ctx: CGContext) {
+        print("drawLayer")
+        position.x -= 50.0
     }
 }
