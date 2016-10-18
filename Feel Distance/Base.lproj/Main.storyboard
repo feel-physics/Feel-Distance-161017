@@ -85,9 +85,6 @@
                             <constraint firstItem="itw-DV-U96" firstAttribute="leading" secondItem="fON-hw-VGj" secondAttribute="leadingMargin" constant="-20" id="v2d-9B-Shp"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="previewView" destination="itw-DV-U96" id="bim-hU-uBD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lse-oa-ObZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,9 +155,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="dataPlottedView" destination="yC1-fu-r3Z" id="bNg-pg-ecy"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nga-gw-92B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
