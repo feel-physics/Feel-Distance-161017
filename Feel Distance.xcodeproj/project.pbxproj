@@ -24,6 +24,7 @@
 		07B286581DB46A1C00A288D8 /* DataPlottedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */; };
 		07B2865A1DB46B1500A288D8 /* DataPlottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B286591DB46B1500A288D8 /* DataPlottedView.swift */; };
 		07B2865C1DB46E6300A288D8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B2865B1DB46E6300A288D8 /* Color.swift */; };
+		07DB48A91DB5A4130021AB5C /* CaptureVideoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DB48A81DB5A4130021AB5C /* CaptureVideoLayer.swift */; };
 		07FAA5A11DB4AD36000729EA /* DataPlottedShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAA5A01DB4AD36000729EA /* DataPlottedShapeLayer.swift */; };
 		07FAA5A51DB589F2000729EA /* KvoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FAA5A41DB589F2000729EA /* KvoModel.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		07B286571DB46A1C00A288D8 /* DataPlottedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedViewController.swift; sourceTree = "<group>"; };
 		07B286591DB46B1500A288D8 /* DataPlottedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedView.swift; sourceTree = "<group>"; };
 		07B2865B1DB46E6300A288D8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		07DB48A81DB5A4130021AB5C /* CaptureVideoLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureVideoLayer.swift; sourceTree = "<group>"; };
 		07FAA5A01DB4AD36000729EA /* DataPlottedShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPlottedShapeLayer.swift; sourceTree = "<group>"; };
 		07FAA5A41DB589F2000729EA /* KvoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KvoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 			children = (
 				074E8E4C1DB20AC500A36D95 /* PreviewViewController.swift */,
 				07B2864F1DB4480100A288D8 /* CaptureSession.swift */,
+				07DB48A81DB5A4130021AB5C /* CaptureVideoLayer.swift */,
 			);
 			name = Preview;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				07B286581DB46A1C00A288D8 /* DataPlottedViewController.swift in Sources */,
 				074E8E4D1DB20AC500A36D95 /* PreviewViewController.swift in Sources */,
 				07B2865A1DB46B1500A288D8 /* DataPlottedView.swift in Sources */,
+				07DB48A91DB5A4130021AB5C /* CaptureVideoLayer.swift in Sources */,
 				07FAA5A11DB4AD36000729EA /* DataPlottedShapeLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,12 @@ import UIKit
 class DataPlottedViewController: UIViewController{
     let shape = DataPlottedShapeLayer()
     let model: KvoModel
-
+    
+    /*
+    NSUnknownKeyExceptionが出た時の回避方法 | iPhoneアプリ開発者の憂鬱 
+    http://ios.steppers-hi.net/?eid=24
+    */
+    
     required init?(coder aDecoder: NSCoder) {
         model = KvoModel.sharedInstance
         super.init(coder: aDecoder)

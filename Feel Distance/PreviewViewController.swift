@@ -25,10 +25,8 @@ class PreviewViewController: UIViewController {
             let captureSession = CaptureSession()
             
             //画像を表示するレイヤーを生成
-            let captureVideoLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer.init(session: captureSession)
-            captureVideoLayer.connection.videoOrientation     = AVCaptureVideoOrientation.LandscapeRight
+            let captureVideoLayer = CaptureVideoLayer(session: captureSession)
             captureVideoLayer.frame        = view.frame
-            captureVideoLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
             //Viewに背景として追加
             view.layer.insertSublayer(captureVideoLayer, atIndex: 0)
             
