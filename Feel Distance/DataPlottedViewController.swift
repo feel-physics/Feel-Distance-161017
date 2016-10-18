@@ -9,9 +9,24 @@
 import UIKit
 
 class DataPlottedViewController: UIViewController{
-    @IBOutlet var dataPlottedView: DataPlottedView!
+    let shape = DataPlottedShapeLayer()
+    let model: KvoModel
+
+    required init?(coder aDecoder: NSCoder) {
+        model = KvoModel.sharedInstance
+        super.init(coder: aDecoder)
+    }
     
-    func addValue(value: Float!) -> Void {
-        dataPlottedView.addValue(value)
+    override func viewWillAppear(animated: Bool) {
+        model.addObserver(self, forKeyPath: "valueSum", options: .New, context: nil)
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "valueSum" {
+            print(model.valueSum)
+            shape.position.x += 10.0
+            view.layer.mask = shape
+            view.setNeedsDisplay()
+        }
     }
 }

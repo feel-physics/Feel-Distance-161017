@@ -10,29 +10,21 @@ import UIKit
 import Foundation
 
 class DataPlottedShapeLayer: CAShapeLayer {
-    let model: KvoModel
     
     override init() {
-        model = KvoModel.sharedInstance
         super.init()
         lineWidth = 2
         strokeColor = Color.graph.CGColor
         fillColor = Color.graph.CGColor
         path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), nil)
         
-        //let ud = NSUserDefaults.standardUserDefaults()
-        //ud.addObserver(self, forKeyPath: "values", options: [NSKeyValueObservingOptions.New], context: nil)
-        model.addObserver(self, forKeyPath: "valueSum", options: .New, context: nil)
-
     }
     
     override init(layer: AnyObject) {
-        model = KvoModel.sharedInstance
         super.init(layer: layer)
     }
 
     required init?(coder aDecoder: NSCoder) {
-        model = KvoModel.sharedInstance
         super.init(coder: aDecoder)
     }
     
@@ -59,18 +51,4 @@ class DataPlottedShapeLayer: CAShapeLayer {
         return CGPointMake(self.frame.width  - CGFloat(valueX * 5.0),
                            self.frame.height - CGFloat(valueY * 5.0))
     }
-    
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if keyPath == "valueSum" {
-            print(model.valueSum)
-        }
-    }
-
-    /*
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if keyPath == "values" {
-            //print(change)
-        }
-    }
-    */
 }
