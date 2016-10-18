@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // 「初回起動ですよ」
-        UD().set("isFirstLaunch", value: true)
+        UD.set("isFirstLaunch", value: true)
 
         // 開発中なら…
         if InfoPList.get("ShouldResetUserDefaultOnLaunch") as! Bool {
-            UD().reset()
-        }        
+            UD.reset()
+        }
         
         return true
     }
