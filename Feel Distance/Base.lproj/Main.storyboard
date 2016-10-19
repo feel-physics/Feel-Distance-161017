@@ -121,7 +121,6 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zZI-n1-y4n" firstAttribute="top" secondItem="m1j-pp-zBO" secondAttribute="bottom" id="DLt-QH-QwF"/>
                             <constraint firstItem="GvS-Kb-3i7" firstAttribute="top" secondItem="zZI-n1-y4n" secondAttribute="bottom" id="F9E-VT-u1q"/>
@@ -150,10 +149,10 @@
                         <viewControllerLayoutGuide type="top" id="S4O-N8-G3k"/>
                         <viewControllerLayoutGuide type="bottom" id="EmJ-b3-yAZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yC1-fu-r3Z" customClass="DataPlottedView" customModule="Feel_Distance" customModuleProvider="target">
+                    <view key="view" alpha="0.5" contentMode="scaleToFill" id="yC1-fu-r3Z" customClass="DataPlottedView" customModule="Feel_Distance" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="535" height="260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nga-gw-92B" userLabel="First Responder" sceneMemberID="firstResponder"/>
