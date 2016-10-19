@@ -24,6 +24,11 @@ class DataPlottedViewController: UIViewController{
         super.init(coder: aDecoder)
     }
     
+    override func viewDidLayoutSubviews() {
+        UD.set("DataPlottedViewBoundsSizeWidth" , value: view.bounds.size.width )
+        UD.set("DataPlottedViewBoundsSizeHeight", value: view.bounds.size.height)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         model.addObserver(self, forKeyPath: "value", options: .New, context: nil)
     }

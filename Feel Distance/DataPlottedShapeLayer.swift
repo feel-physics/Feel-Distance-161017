@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class DataPlottedShapeLayer: CAShapeLayer {
+class DataPlottedShapeLayer: LayerToDraw {
     
     init(value: Float, previousValue: Float,
          parentViewController: DataPlottedViewController)
@@ -20,12 +20,6 @@ class DataPlottedShapeLayer: CAShapeLayer {
         lineWidth   = 3.0  // 輪郭の線の太さは1.0pt
         
         let graphPath = UIBezierPath()
-        
-        func point(x: Float, y: Float) -> CGPoint {
-            return CGPointMake(parentViewController.view.bounds.size.width  - CGFloat(x) * 1.0,
-                               parentViewController.view.bounds.size.height - CGFloat(y) * 5.0)
-        }
-        
         let value = Float(value)
         graphPath.moveToPoint   (point(-10.0, y: 0.0))            // 原点
         graphPath.addLineToPoint(point(  0.0, y: 0.0))            // x軸上の点
