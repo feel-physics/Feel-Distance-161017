@@ -10,32 +10,29 @@ import UIKit
 import Foundation
 
 class DataPlottedShapeLayer: CAShapeLayer {
-//    var width: CGFloat
     
-    init(points: [CGPoint]) {
+    init(value: Float, previousValue: Float,
+         parentViewController: DataPlottedViewController)
+    {
         super.init()
-        lineWidth = 2
-        strokeColor = Color.graph.CGColor
-        fillColor = Color.graph.CGColor
+        //shapeLayer.strokeColor = Color.graph.CGColor  // 輪郭の色
+        fillColor   = Color.graph.CGColor  // 図形の中の色
+        lineWidth   = 3.0  // 輪郭の線の太さは1.0pt
         
-//        path = CGPathCreateWithRect(CGRectMake(100, 100, 100, 100), nil)
-//        backgroundColor = Color.graph.CGColor
-        
-        
-
         let graphPath = UIBezierPath()
-        graphPath.moveToPoint(points[0])
-        graphPath.addLineToPoint(points[1])
-        graphPath.addLineToPoint(points[2])
-        graphPath.addLineToPoint(points[3])
+        
+        func point(x: Float, y: Float) -> CGPoint {
+            return CGPointMake(parentViewController.view.bounds.size.width  - CGFloat(x) * 1.0,
+                               parentViewController.view.bounds.size.height - CGFloat(y) * 5.0)
+        }
+        
+        let value = Float(value)
+        graphPath.moveToPoint   (point(-10.0, y: 0.0))            // 原点
+        graphPath.addLineToPoint(point(  0.0, y: 0.0))            // x軸上の点
+        graphPath.addLineToPoint(point(  0.0, y: previousValue))  // 現在地
+        graphPath.addLineToPoint(point(-10.0, y: value))          // y軸上の点
         graphPath.closePath()
         path = graphPath.CGPath
-        backgroundColor = Color.graph.CGColor
-        Color.graph.setFill()
-        
-        delegate = self
-        frame = CGRectMake(points[0].x, points[0].y, 50.0, 100.0)
-        print(frame.width, frame.height)
     }
     
     override init(layer: AnyObject) {
@@ -44,35 +41,5 @@ class DataPlottedShapeLayer: CAShapeLayer {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    
-    /*
-    func addValue(value: Float!) -> Void {
-        values += [value]
-        let graph = UIBezierPath()
-        graph.moveToPoint(point(Float(values.count - 1), valueY: values.first!))
-        for x in 1..<values.count {
-            // 左上の点から右上の点へポリラインを引いていく
-            graph.addLineToPoint(point(Float(values.count - 1 - x), valueY: values[x]))
-        }
-        graph.closePath()
-        Color.graph.setStroke()
-        graph.lineWidth = 2
-        graph.stroke()
-        graph.fill()
-
-    }
-    */
-    
-    // 打点メソッド
-    func point(valueX:Float, valueY:Float) -> CGPoint {
-        return CGPointMake(self.frame.width  - CGFloat(valueX * 5.0),
-                           self.frame.height - CGFloat(valueY * 1.0))
-    }
-    
-    override func drawLayer(layer: CALayer, inContext ctx: CGContext) {
-        print("drawLayer")
-        position.x -= 50.0
     }
 }
