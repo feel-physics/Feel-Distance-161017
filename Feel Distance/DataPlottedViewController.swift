@@ -11,7 +11,7 @@ import UIKit
 class DataPlottedViewController: UIViewController{
     let model: KvoModel
     var shapeLayers: [CAShapeLayer] = []
-    
+    var lastValue: Float = 0.0
     
     /*
     NSUnknownKeyExceptionが出た時の回避方法 | iPhoneアプリ開発者の憂鬱 
@@ -36,20 +36,21 @@ class DataPlottedViewController: UIViewController{
             shapeLayers += [CAShapeLayer()]
             let shapeLayer = shapeLayers.last!
             // 円のCALayer作成
-            shapeLayer.strokeColor = UIColor.blueColor().CGColor  // 輪郭は青色
-            shapeLayer.fillColor = UIColor.whiteColor().CGColor  // 図形の中の色は白色
-            shapeLayer.lineWidth = 3.0  // 輪郭の線の太さは1.0pt
-            shapeLayer.lineDashPattern = [2, 3]
+            shapeLayer.strokeColor = Color.graph.CGColor  // 輪郭の色
+            shapeLayer.fillColor   = Color.graph.CGColor  // 図形の中の色
+            shapeLayer.lineWidth   = 3.0  // 輪郭の線の太さは1.0pt
             
             
             let graphPath = UIBezierPath()
-            func point(x: CGFloat, y: CGFloat) -> CGPoint {
-                return CGPointMake(view.bounds.size.width - x, view.bounds.size.height - y)
+            func point(x: Float, y: Float) -> CGPoint {
+                return CGPointMake(view.bounds.size.width  - CGFloat(x) * 1.0,
+                                   view.bounds.size.height - CGFloat(y) * 5.0)
             }
-            graphPath.moveToPoint(point(0.0, y: 0.0))
-            graphPath.addLineToPoint(point(10.0, y: 0.0))
-            graphPath.addLineToPoint(point(10.0, y: CGFloat(model.value)))
-            graphPath.addLineToPoint(point(0.0, y: CGFloat(model.value)))
+            let value = Float(model.value)
+            graphPath.moveToPoint(point(0.0, y: 0.0))  // 原点
+            graphPath.addLineToPoint(point(10.0, y: 0.0))    // x軸上の点
+            graphPath.addLineToPoint(point(10.0, y: lastValue))  // 現在地
+            graphPath.addLineToPoint(point( 0.0, y: value))  // y軸上の点
             graphPath.closePath()
             shapeLayer.path = graphPath.CGPath
             
@@ -59,6 +60,8 @@ class DataPlottedViewController: UIViewController{
             for shapeLayer in shapeLayers {
                 shapeLayer.position.x -= 10.0
             }
+            
+            lastValue = value
 //            shape = getColumn(model.value)
 //            print(model.value)
             //shape!.position.x += 10.0
@@ -71,13 +74,16 @@ class DataPlottedViewController: UIViewController{
         }
     }
     
+    /*
     // 打点メソッド
     func point(valueX:Float, valueY:Float) -> CGPoint {
         //print(view.frame.width, view.frame.height)
         return CGPointMake(view.frame.width  - CGFloat(valueX * 5.0),
                            view.frame.height - CGFloat(valueY * 5.0))
     }
+     */
     
+    /*
     func getColumn(height: Float) -> DataPlottedShapeLayer {
         var points: [CGPoint] = []
         points += [point(10.0, valueY: height)]
@@ -86,4 +92,5 @@ class DataPlottedViewController: UIViewController{
         points += [point(10.0, valueY:  0.0)]
         return DataPlottedShapeLayer(points: points)
     }
+     */
 }
