@@ -29,6 +29,14 @@ Thus, this is a good teaching material for learning V-T graph.
 
 I don't have enough time to maintain. Your contribution is truely appreciated.
 
+### Contact
+
+[Email](mailto:tatsuro.ueda@feel-physics.jp), 
+[Homepage](https://feel-physics.jp),
+[Facebook](https://www.facebook.com/feelphysicsjp),
+[Twitter](https://twitter.com/feelphysicsjp),
+[LinkedIn](https://www.linkedin.com/in/tatsuro-ueda/)
+
 ---
 ### 概要 
 力学の運動のV-T図を学ぶ物理学習アプリ
@@ -50,3 +58,13 @@ I don't have enough time to maintain. Your contribution is truely appreciated.
 ### 貢献して下さい
 
 私はメンテナンスする時間を確保できません。貢献して頂けると本当にありがたいです。
+
+### 連絡先
+
+### Contact
+
+[Email](mailto:tatsuro.ueda@feel-physics.jp), 
+[Homepage](https://feel-physics.jp),
+[Facebook](https://www.facebook.com/feelphysicsjp),
+[Twitter](https://twitter.com/feelphysicsjp),
+[LinkedIn](https://www.linkedin.com/in/tatsuro-ueda/)
